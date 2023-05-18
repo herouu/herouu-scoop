@@ -1,3 +1,3 @@
 ## 使用
 
-scoop bucket add herouu-scoop https://github.com/herouu/herouu-scoop.git
+scoop bucket add herouu_scoop https://github.com/herouu/scoop_bucket.git
