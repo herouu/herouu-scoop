@@ -1,6 +1,8 @@
 on:
   schedule:
     - cron: '*/30 * * * *'
+  push:
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       force:
@@ -10,19 +12,14 @@ on:
 
 name: Update bucket
 jobs:
-  update:
-    name: ♻ Update manifests
+  excavate:
+    name: Excavator
     runs-on: windows-latest
     steps:
-      - name: ⬇ Checkout repo
-        uses: actions/checkout@master
-      - name: ♻ Run autoupdate
-        uses: foosel/scoop-checkver-action@main
-        with:
-          bucket: bucket
-          force: ${{ github.event.inputs.force }}
-      - uses: EndBug/add-and-commit@v7
-        with:
-          message: "chore: Update package version"
-          author_name: 'github-actions[bot]'
-          author_email: 'github-actions[bot]@users.noreply.github.com'
+      - uses: actions/checkout@main
+      - name: Excavator
+        uses: Ash258/Scoop-GithubActions@stable-win
+        env:
+          GITH_EMAIL: herouucn@foxmail.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: '1'
