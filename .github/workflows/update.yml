@@ -12,7 +12,7 @@ name: Update bucket
 jobs:
   update:
     name: ♻ Update manifests
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@master
