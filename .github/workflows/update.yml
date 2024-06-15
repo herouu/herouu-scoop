@@ -21,22 +21,8 @@ jobs:
         with:
           bucket: bucket
           force: ${{ github.event.inputs.force }}
-      - name: 🚀 Deploy changes
-        run: |
-          # set git author
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-          # create individual commit per updated manifest
-          while read file; do
-            if [[ $file == bucket/* ]] && [[ $file == *.json ]]; then
-              version=$(cat $file | jq -r .version)
-              manifest=$(basename $file .json)
-              message="$manifest: Update to version $version"
-              git add "$file"
-              git commit -m "$message"
-            fi
-          done < <(git diff --name-only)
-
-          # finally push
-          git push
+      - uses: EndBug/add-and-commit@v7
+        with:
+          message: "chore: Update package version"
+          author_name: 'github-actions[bot]'
+          author_email: 'github-actions[bot]@users.noreply.github.com'
