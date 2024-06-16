@@ -13,8 +13,12 @@
     },
     "bin": [
         [
-            "go-mysqlstat",
+            "go-mysqlstat.exe",
             "gms"
+        ],
+        [
+            "go-mysqlstat.exe",
+            "mysqlstat"
         ]
     ],
     "hash": "ea848d7af121bcad7afbb3e81d75afc54fdb748f57d333a720d8fc87f0074acb"
