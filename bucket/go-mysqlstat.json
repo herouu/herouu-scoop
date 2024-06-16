@@ -13,7 +13,7 @@
     },
     "bin": [
         [
-            "go-mysqlstat.exe",
+            "go-mysqlstat",
             "gms"
         ]
     ],
