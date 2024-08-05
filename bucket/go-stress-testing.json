@@ -11,6 +11,6 @@
         "url": "https://github.com/link1st/go-stress-testing/blob/master/LICENSE"
     },
     "pre_install": "Rename-Item \"$dir/go-stress-testing*.exe\" \"$dir/gst.exe\"",
-    "url": "https://github.com/link1st/go-stress-testing/releases/download/1.0.15/go-stress-testing-win.exe",
-    "version": "1.0.15"
+    "url": "https://github.com/link1st/go-stress-testing/releases/download/1.0.16/go-stress-testing-win.exe",
+    "version": "1.0.16"
 }
